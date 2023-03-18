@@ -8,28 +8,26 @@ int main(void)
 {
 	int i;
 	int j;
-	int k;
-	int f;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i <= 98; i++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = i + 1; j <= 99; j++)
 		{
-			for (k = i; k <= 9; k++)
-			{
-				for (f = j + 1; f <= 9; f++)
-				{
-					putchar('0' + i);
-					putchar('0' + j);
-					putchar(32);
-					putchar('0' + k);
-					putchar('0' + f);
-					if (j == 8 && i == 9)
-						continue;
-					putchar(44);
-					putchar(32);
-				}
-			}
+			int digit1 = i / 10;
+			int digit2 = i % 10;
+
+			putchar('0' + digit1);
+			putchar('0' + digit2);
+			putchar(32);
+			int digit11 = j / 10;
+			int digit22 = j % 10;
+
+			putchar('0' + digit11);
+			putchar('0' + digit22);
+			if (j == 99 && i == 98)
+				continue;
+			putchar(44);
+			putchar(32);
 		}
 	}
 	putchar('\n');
