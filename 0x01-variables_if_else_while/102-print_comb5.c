@@ -6,30 +6,33 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int d1, d2;
 
-	for (i = 0; i <= 98; i++)
+	for (d1 = 0; d1 <= 98; d1++)
 	{
-		for (j = i + 1; j <= 99; j++)
+		for (d2 = d1 + 1; d2 <= 99; d2++)
 		{
-			int digit1 = i / 10;
-			int digit2 = i % 10;
+			int digit1 = d1 / 10;
+			int digit11 = d1 % 10;
 
-			putchar('0' + digit1);
-			putchar('0' + digit2);
-			putchar(32);
-			int digit11 = j / 10;
-			int digit22 = j % 10;
+			putchar(digit1 + '0');
+			putchar(digit11 + '0');
+			putchar(' ');
+			int digit2 = d2 / 10;
+			int digit22 = d2 % 10;
 
-			putchar('0' + digit11);
-			putchar('0' + digit22);
-			if (j == 99 && i == 98)
+			putchar(digit2 + '0');
+			putchar(digit22 + '0');
+
+			if (d1 == 98 && d2 == 99)
 				continue;
-			putchar(44);
-			putchar(32);
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }
