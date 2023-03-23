@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2 largest = 10000000000;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2, largest = 10000000000;
 	unsigned long int hold1, hold2, hold3;
 	int count;
 
