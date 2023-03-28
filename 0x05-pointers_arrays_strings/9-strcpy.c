@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * *_strcpy - copy the string pointed by src, to the buffer pointed to by dest
