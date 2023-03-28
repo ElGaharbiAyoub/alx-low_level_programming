@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _puts2 -  print evry other string
+ * puts2 -  print evry other string
  *
  * @str: string
  *
