@@ -1,9 +1,16 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * print_number - prints an integer.
  * @n: input integer.
  * Return: no return.
  */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
 void print_number(int n)
 {
 	unsigned int m, d, count;
@@ -32,4 +39,5 @@ void print_number(int n)
 		_putchar(((m / count) % 10) + 48);
 	}
 }
+
 
