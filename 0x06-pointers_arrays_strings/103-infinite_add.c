@@ -17,7 +17,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		i++;
 	while (*(n2 + j) != '\0')
 		j++;
-	i >= j ? br = i : br = j;
+	i >= j ? br = i : br == j;
 	if (size_r <= br + 1)
 		return (0);
 	*(r + (br + 1)) = '\0', i--, j--, size_r--;
