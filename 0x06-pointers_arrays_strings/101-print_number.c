@@ -1,15 +1,9 @@
 #include "main.h"
-#include <unistd.h>
 /**
  * print_number - prints an integer.
  * @n: input integer.
  * Return: no return.
  */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 void print_number(int n)
 {
