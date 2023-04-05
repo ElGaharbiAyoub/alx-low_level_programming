@@ -19,12 +19,12 @@ char *_strstr(char *haystack, char *needle)
 		b = haystack;
 		p = needle;
 
-		while (*p != '\0' && *b == *p)
+		while (*haystack != '\0' && *p != '\0' && *haystack == *p)
 		{
-			b++;
+			haystack++;
 			p++;
 		}
-		if (*p == '\0')
+		if (!*p)
 			return (b);
 		haystack = b + 1;
 	}
