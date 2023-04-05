@@ -10,7 +10,7 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int j;
+	unsigned int j;
 
 	for (; *s >= '\0'; s++)
 	{
@@ -21,7 +21,6 @@ char *_strpbrk(char *s, char *accept)
 				return (s);
 			}
 		}
-		if (*s == '\0')
-			return (0);
 	}
+	return ('\0');
 }
