@@ -31,7 +31,8 @@ char *str_concat(char *s1, char *s2)
 	if (!s2)
 		s2 = "";
 
-	len = _strlen(s1) + _strlen(s2);
+	len = _strlen(s1) + _strlen(s2) + 1;
+
 	pnt = malloc(len * sizeof(char));
 
 	for (i = 0; s1[i] != '\0'; i++)
