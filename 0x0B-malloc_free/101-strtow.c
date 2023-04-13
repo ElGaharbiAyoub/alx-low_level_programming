@@ -71,7 +71,7 @@ int count_words(char *str)
 char **strtow(char *str)
 {
 	char **result;
-	int i = 0;
+	int j, i = 0;
 	int lenw;
 
 	result = malloc(sizeof(char *) * count_words(str) + 1);
@@ -83,7 +83,7 @@ char **strtow(char *str)
 			result[i] = malloc(sizeof(char) * lenw + 1);
 			if (!result[i])
 			{
-				for (int j = 0; j < i; i++)
+				for (j = 0; j < i; i++)
 					free(result[j]);
 				free(result);
 				return (NULL);
