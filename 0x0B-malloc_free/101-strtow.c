@@ -83,8 +83,10 @@ char **strtow(char *str)
 			result[i] = malloc(sizeof(char) * lenw + 1);
 			if (!result[i])
 			{
-				free(result[i]);
-				return (1);
+				for (int j = 0; j < i; i++)
+					free(result[j]);
+				free(result);
+				return (NULL);
 			}
 			_strncpy(result[i], str, lenw);
 
