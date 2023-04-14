@@ -8,7 +8,7 @@
  * Return: length of s
  */
 
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
 	if (*s == '\0')
 		return (0);
