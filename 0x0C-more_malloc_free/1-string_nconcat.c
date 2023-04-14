@@ -30,18 +30,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j;
 	unsigned int size;
 
-	if (s1 == NULL)
+	if (!s1)
 		s1 = "";
-	if (s2 == NULL)
+	if (!s2)
 		s2 = "";
-	if (n >= _strlen(s2))
+	if (n > _strlen(s2))
 		size = _strlen(s2);
 	else
 		size = n;
 
 	ptr = malloc(_strlen(s1) + size + 1);
 
-	if (ptr == NULL)
+	if (!ptr)
 		return (NULL);
 	for (i = 0; i < _strlen(s1); i++)
 	{
