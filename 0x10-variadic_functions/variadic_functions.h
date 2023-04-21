@@ -1,6 +1,9 @@
 #ifndef _VARIADIC_FUNCTION_H
 #define _VARIADIC_FUNCTION_H
 
+#include <stdarg.h>
+#include <stdio.h>
+
 /**
  * struct op - struct for 3
  * @c: character to check
