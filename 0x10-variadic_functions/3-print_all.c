@@ -84,10 +84,10 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", s_btw_arg);
 				ops[j].f(larg);
+				s_btw_arg = ", ";
 			}
 			j++;
 		}
-		s_btw_arg = ", ";
 		i++;
 	}
 	printf("\n");
