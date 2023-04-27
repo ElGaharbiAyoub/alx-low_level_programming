@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_node - adds a new node
+ * add_node_end - adds a new node
  * @head: head address i think
  * @str: needs to be duplicated
  * Return: returns an address of new node
