@@ -6,7 +6,7 @@
  * Return: returns an address of new node
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *end;
 	char *newstr = strdup(str);
