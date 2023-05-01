@@ -1,6 +1,5 @@
 #include "lists.h"
 
-
 /**
  * print_listint - print nodes
  * @h: node
