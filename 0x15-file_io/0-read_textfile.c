@@ -13,7 +13,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int openf;
 	size_t readf, wrtf;
 
-	if (filename == NULL)
+	if (filename == NULL || !letters)
 		return (0);
 
 	buffer = malloc(letters);
