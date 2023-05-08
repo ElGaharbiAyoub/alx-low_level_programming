@@ -17,7 +17,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	buffer = malloc(letters);
-	if (buffer == NULL)
+	if (!buffer)
 		return (0);
 
 	openf = open(filename, O_RDONLY);
@@ -35,7 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	wrtf = write(STDIN_FILENO, buffer, readf);
+	wrtf = write(STDOUT_FILENO, buffer, readf);
 
 	free(buffer);
 	close(openf);
