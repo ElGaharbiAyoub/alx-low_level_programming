@@ -69,7 +69,7 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	copy_text_file(file1, file2, av[1], av[2]);
+	copy_content_file(file1, file2, av[1], av[2]);
 
 	if (close(file1) < 0)
 	{
