@@ -2,9 +2,8 @@
 #include <stdlib.h>
 
 /**
- * free_dnodeint - frees a dlistint_t list
- * @head: beginning of dlistint_t
- * Return: address of the new element or NULL if it failed
+ * free_dlistint - frees a dlistint_t list
+ * @head: beginning of doubly linked list
  */
 
 void free_dlistint(dlistint_t *head)
