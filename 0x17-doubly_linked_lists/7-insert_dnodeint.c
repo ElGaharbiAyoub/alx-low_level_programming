@@ -23,7 +23,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/* add node to the biginning */
 	if (idx == 0)
-		return (add_dnodeint(&temp, n));
+	{
+		new->next = *h;
+		new->prev = NULL;
+
+		if (*h)
+			(*h)->prev = new;
+
+		*h = new;
+
+		return (new);
+	}
 
 	while (temp)
 	{
