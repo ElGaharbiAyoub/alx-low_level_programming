@@ -21,7 +21,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->n = n;
 	temp = *h;
 
-	/* add node to the biginning */
 	if (idx == 0)
 	{
 		new->next = *h;
@@ -29,9 +28,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		if (*h)
 			(*h)->prev = new;
-
 		*h = new;
-
 		return (new);
 	}
 
@@ -52,5 +49,4 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	free(new);
 	return (NULL);
-
 }
