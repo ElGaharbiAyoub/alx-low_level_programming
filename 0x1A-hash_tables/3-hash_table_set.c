@@ -10,15 +10,17 @@
 int update_val(hash_node_t **head, const char *key, const char *value)
 {
 	hash_node_t *cp = *head;
+	char *newValue;
 
 	while (cp)
 	{
 		if (strcmp(cp->key, key) == 0)
 		{
-			free(cp->value);
-			cp->value = strdup((char *)value);
+			newValue = strdup(value);
 			if (!cp->value)
 				return (-1);
+			free(cp->value);
+			cp->value = newValue;
 			return (1);/* Return 1 to indicate success (value updated) */
 		}
 		cp = cp->next;
@@ -63,7 +65,7 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	new->next = *head;
 
 	*head = new;
-	return (new);
+	return (*head);
 }
 
 /**
@@ -85,12 +87,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	isUpdate = update_val(&ht->array[index], key, value);
+	isUpdate = update_val(&(ht->array[index]), key, value);
 	if (isUpdate == 0)/* If the key doesn't exist in the linked list */
 	{
 		/* Add a new node with the key-value pair */
-		new = add_node(&ht->array[index], key, value);
-		if (new)
+		new = add_node(&(ht->array[index]), key, value);
+		if (!new)
 			return (0);
 
 		ht->array[index] = new;
