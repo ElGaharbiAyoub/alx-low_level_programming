@@ -21,7 +21,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	new_table->size = size;
 	new_table->array = malloc(sizeof(shash_node_t *) * size);
 	new_table->shead = NULL;
-	new_table->stail= NULL;
+	new_table->stail = NULL;
 	if (!new_table->array)
 	{
 		free(new_table);
@@ -257,7 +257,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 		}
 		printf("}\n");
 	}
-}/**
+}
+/**
  * shash_table_delete - Deletes a hash table.
  * @ht: Pointer to the hash table.
  */
