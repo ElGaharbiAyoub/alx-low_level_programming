@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""fff""""
+"""perimeter of island""""
+
 
 def island_perimeter(grid):
-    """ sss"""
+    """ function """
     count = 0
     if grid:
         gridLen = len(grid)
@@ -31,4 +32,3 @@ def island_perimeter(grid):
                         if not row[index2 + 1]:
                             count += 1
     return count
-    
