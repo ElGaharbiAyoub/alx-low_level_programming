@@ -14,11 +14,39 @@ void print_array(int *array, size_t start, size_t end)
 	for (i = start; i <= end; i++)
 	{
 		if (i != end)
-			printf(" %u,", array[i]);
+			printf(" %d,", array[i]);
 		else
-			printf(" %u\n", array[i]);
+			printf(" %d\n", array[i]);
 	}
 }
+
+/**
+ * rec_search - recursively search using binary algo
+ * @array: array to search
+ * @l: left most value
+ * @r: right most value
+ * @val: value to search
+ *
+ * Return: index or -1 if not found
+ */
+
+int rec_search(int *array, size_t  l, size_t  r, int val)
+{
+	size_t  mdl;
+
+	if (r >= l)
+	{
+		mdl = l + (r - l) / 2;
+		print_array(array, l, r);
+		if (array[mdl] == val)
+			return (mdl);
+		if (array[mdl] > val)
+			return (rec_search(array, l, mdl - 1, val));
+		return (rec_search(array, mdl + 1, r, val));
+	}
+	return (-1);
+}
+
 /**
  * binary_search - Searches for a value in a sorted array using binary search
  *
@@ -30,21 +58,7 @@ void print_array(int *array, size_t start, size_t end)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t left, right, mdl;
-
-	left = 0;
-	right = size - 1;
-
-	while (left <= right)
-	{
-		mdl = left + (right - left) / 2;
-		print_array(array, left, right);
-		if (array[mdl] == value)
-			return (mdl);
-		else if (array[mdl] < value)
-			left = mdl + 1;
-		else
-			right = mdl - 1;
-	}
+	if (array)
+		return (rec_search(array, 0, size - 1, value));
 	return (-1);
 }
